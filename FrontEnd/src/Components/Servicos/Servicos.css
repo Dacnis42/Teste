@@ -1,0 +1,91 @@
+#servicos {
+    display: flex; /* Adiciona flexbox ao contêiner */
+    flex-direction: column; /* Coloca o título acima dos cards */
+    align-items: center; /* Centraliza horizontalmente */
+    width: 90%; /* Certifique-se de que o contêiner ocupa toda a largura disponível */
+    margin-top: 10%; /* Espaço acima do contêiner, se necessário */
+   margin-left: 5%;
+   border-radius: 2%;
+    height: 80vh;
+    margin-bottom: 10%; /* Espaço abaixo do contêiner, se necessário */
+    background-color: #e4cbc2; /* Cor de fundo do contêiner */
+}
+
+.card-container {
+    gap: 10%;
+    height: 100vh; /* Alterado para ocupar toda a altura da tela */
+    display: flex; /* Flexbox para alinhar os cards */
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    align-items: flex-start; /* Alinha os cards no topo do contêiner */
+    padding-top: 5%; /* Ajuste a quantidade de espaço para mover o card para baixo */
+    width: 100%; /* Certifique-se de que o contêiner ocupa toda a largura disponível */
+}
+
+
+.servicos-titulo {
+    color: #f59c86;
+    font-size: 3rem;
+    text-align: center; /* Centraliza o título */
+}
+
+.card {
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo interno verticalmente */
+    justify-content: center; /* Centraliza o conteúdo do card verticalmente */
+    align-items: center; /* Centraliza o conteúdo do card horizontalmente */
+    width: 25%; /* Ajuste a largura conforme necessário */
+    height: 50vh; /* Tamanho do card, ajustável */
+    background-color: #e6aa8a;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para transformação e sombra */
+    position: relative; /* Necessário para posicionamento, caso haja elementos internos */
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites do card */
+}
+
+.card .img-box {
+    position: absolute;
+    width: 100%; /* A imagem ocupa toda a largura do card */
+    height: 100%; /* A imagem ocupa toda a altura do card */
+    top: 0;
+    left: 0; /* Alinha à esquerda */
+    display: flex; /* Usar flexbox para centralizar a imagem */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    transition: opacity 0.5s ease; /* Transição suave para a opacidade */
+    z-index: 1; /* Garante que a imagem fique acima do texto inicialmente */
+}
+
+.card .img-box img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do card */
+    max-height: 100%; /* Garante que a imagem não ultrapasse a altura do card */
+    object-fit: cover; /* Garante que a imagem cubra todo o espaço do card */
+    transition: transform 0.5s ease; /* Transição suave para a transformação da imagem */
+}
+
+.card:hover .img-box img {
+    transform: scale(1.1); /* Aumenta a imagem levemente ao passar o mouse */
+}
+
+.card .content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    color: rgb(226, 217, 211);
+    position: absolute; /* Muda para absolute para sobrepor a imagem */
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 20px; /* Ajuste o padding conforme necessário */
+    text-align: center; /* Centraliza o texto */
+    overflow: hidden;
+    transition: opacity 0.5s ease; /* Transição suave para a opacidade */
+    z-index: 2; /* Garante que o texto fique acima da imagem */
+    opacity: 0; /* Começa invisível */
+}
+
+.card:hover .img-box {
+    opacity: 0; /* Oculta a imagem ao passar o mouse */
+}
+
+.card:hover .content {
+    opacity: 1; /* Torna o texto visível ao passar o mouse */
+}
