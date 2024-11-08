@@ -1,0 +1,149 @@
+/* Reset de box-model e margens */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+  }
+  
+  /* Seção Sobre */
+  #section-sobre {
+    display: flex;
+    flex-direction: row; /* Imagem e texto lado a lado */
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw; /* Ocupa 100% da largura da tela */
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  #section-sobre::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: -200px;
+    width: 500px;
+    height: 500px;
+    background-color: #ff8a65;
+    border-radius: 50%;
+    z-index: -1;
+    transition: all 0.5s ease;
+  }
+  
+  #section-sobre:hover::before {
+    top: -300px;
+    left: -300px;
+    width: 600px;
+    height: 600px;
+  }
+  
+  /* Imagem */
+  .figure {
+    width: 40%; /* Ajustando o tamanho da imagem */
+    height: auto;
+    padding: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .figure-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .figure-img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Conteúdo */
+  .conteudo {
+    text-align: left;
+    padding: 20px;
+    max-width: 55%;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+  }
+  
+  .titulo:hover {
+    color: #ff8a65; /* Cor ao passar o mouse */
+  }
+  
+  .subtitulo {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-align: justify;
+    transition: color 0.3s ease;
+  }
+  
+  .subtitulo:hover {
+    color: #b86839; /* Mudança de cor ao passar o mouse */
+  }
+  
+  /* Forma de quebra */
+  .break-shape {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background-color: #ff8a65;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    transition: all 0.3s ease;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    #section-sobre {
+      flex-direction: column; /* Alinhamento em coluna em telas pequenas */
+      padding: 30px 20px;
+    }
+  
+    .figure {
+      width: 80%; /* Aumentando o tamanho da imagem */
+      margin-bottom: 20px;
+    }
+  
+    .conteudo {
+      width: 100%;
+      text-align: center; /* Centraliza o texto em telas pequenas */
+    }
+  
+    .titulo {
+      font-size: 2rem;
+    }
+  
+    .subtitulo {
+      font-size: 1rem;
+    }
+  }
+  

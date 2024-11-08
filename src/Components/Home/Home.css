@@ -1,0 +1,114 @@
+
+#home {
+    display: flex;
+    min-height: calc(100vh - 91px);
+    position: relative;
+}
+#cta {
+    display: flex;
+    justify-content: center; /* Alinha horizontalmente os itens no centro */
+    align-items: center;     /* Alinha verticalmente os itens no centro */
+    flex-direction: column;  /* Organiza os itens em coluna */
+    text-align: center;      /* Centraliza o texto */
+    padding-bottom: 20%;
+}
+
+#cta .title {
+    font-size: 5.5rem;
+    color: var(--color-neutral-1);
+    margin-bottom: 5rem;     /* Adiciona um espaçamento entre o título e os outros elementos */
+}
+
+#cta .title span {
+    padding-top: 10%;
+    color: var(--color-primary-6);
+  
+}
+
+
+#cta .description {
+    font-size: 30px;
+}
+
+#cta_buttons {
+    display: flex;
+    
+    gap: 50px;
+}
+
+#cta_buttons a {
+    text-decoration: none;
+    color: var(--color-neutral-1);;
+}
+
+
+#banner {
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    width: 70%;
+    z-index: 2;
+}
+
+.home-btn{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary-5);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-weight: 600;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.banner-img{
+width: 600px;
+height: auto;
+position: absolute;
+right: 0;
+z-index: 1;
+top: 10%;
+}
+
+
+
+.shape {
+    background-color: rgba(255, 182, 146, 0.909);
+    width: 50%;
+    height: 80%;
+    position: absolute;
+    border-radius: 20% 10% 0% 40%;
+    top: 5%;
+    right: 0;
+    z-index: 1;
+   
+}
+
+@media screen and (max-width: 1170px) {
+    #home {
+        min-height: 100%;
+        padding-top: 0px;
+    }
+
+    #banner,
+    #banner img,
+    #home .shape {
+        display: none;
+    }
+
+    #cta {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #phone_button button {
+        display: none;
+    }
+}
+    
